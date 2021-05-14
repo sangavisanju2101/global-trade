@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require('./state.controller'); 
 
 router.get('/', controller.getState);
+router.get('/:id', controller.getStateById);
 router.post('/', controller.saveState);
 router.put('/:id', controller.updateState);
 router.delete('/:id', controller.deleteState);

@@ -1,21 +1,48 @@
-const getSubcategory= (req,res) => {
-    res.status(200).send("get subcategory"); 
+const service = require('./subcategory.service');
+
+const getSubcategory = (req,res) => {
+    service.getSubcategory(req).then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(500).send(err);
+    })
+}
+
+const getSubcategoryById = (req,res) => {
+    service.getSubcategoryById(req).then((result)=>{
+        res.status(200).send(result);
+    }).catch((err)=>{
+        res.status(500).send(err);
+    })
 }
 
 const saveSubcategory = (req,res) => {
-    res.status(201).send("save subcategory");
+    service.saveSubcategory(req).then((result)=> {
+        res.status(201).send(result);
+    }).catch((err)=> {
+        res.status(500).send(err);
+    })
 }
 
 const updateSubcategory = (req,res) => {
-    res.status(201).send("update subcategory");
+    service.updateSubcategory(req).then((result)=> {
+        res.status(200).send("Record Updated Successfully...");
+    }).catch((err) => {
+        res.status(500).send(err);
+    })
 }
 
 const deleteSubcategory = (req,res) => {
-    res.status(200).send("delete subcategory");
+    service.deleteSubcategory(req).the((result)=> {
+        res.status(200).send("Record Deleted Successfully...");
+    }).catch((err)=>{
+        res.status(500).send(err);
+    })
 }
 
 module.exports = {
     getSubcategory : getSubcategory,
+    getSubcategoryById : getSubcategoryById,
     saveSubcategory : saveSubcategory,
     updateSubcategory : updateSubcategory,
     deleteSubcategory : deleteSubcategory
