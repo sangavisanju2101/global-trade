@@ -1,22 +1,33 @@
 $(document).ready(function(){
-    var username = $("#username").val(); 
-    var password = $("#password").val(); 
-    var showpwd = $("#showpwd"); 
-    var forgot = $("#forgot"); 
+    var username = localStorage.getItem('username');
+    var password = localStorage.getItem('password');
+    var checkbox = localStorage.getItem('checkbox');
 
-    $(showpwd).click(function(){
-        if($(this).is(":checked")){
-            $(password).attr("type","text")
-        } else {
-            $(password).attr("type","password")
-        }
+    //remember me function
+    $('#rememberme').click(function(){
+        var username = $('#userName').val();
+        var password = $('#password').val();
+
+        if ($('#rememberMe').prop('checked')==true){
+            if(username != ''){
+                localStorage.setItem('username' ,username)            
+            }
+            if(password != ''){
+                localStorage.setItem('password' ,password)            
+            }
+            localStorage.setItem('checked', checkbox)
+        }else{
+            localStorage.clear();
+        }   
     })
 
-    $(forgot).click(function(){
-        window.location.href = "http://localhost:3000/forgotpwd"
-    })
+    //show password function
+    $('#showpwd').click(function(){
+        $(this).is(':checked') ? $('#password').attr('type', 'text') : $('#password').attr('type', 'password');
+    });
 
-    $("#registration").click(function(){
-        window.location.href = "http://localhost:3000/registration"
+    //login button action
+    $('#loginBtn').click(function(){
+        window.location.href = 'http://localhost:3000/home'
     })
-})
+});
