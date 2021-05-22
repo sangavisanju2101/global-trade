@@ -1,24 +1,24 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Login page</title>
+        <link rel="stylesheet" href="./css/login.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="/js/login.js"></script>
-        <link rel="stylesheet" href="/public/css/login.css">
+        <script src="./js/login.js"></script>
     </head>
     <body>
         <fieldset>
             <legend>LOGIN PAGE</legend>
             <label>User name : </label>
-            <input type="text" id=userName><br><br>
+            <input type="text" placeholder="Username" id="userName"><br><br>
             <label>Password : </label>
-            <input type="password" id="password"><br><br>
+            <input type="password" placeholder="Password" id="password"><br><br>
             <input type="checkbox" id="showpwd">
             <label>Show password</label><br><br>
             <input type="checkbox" id="rememberme">
             <label>Remember me</label><br><br>
-            <button>Login</button><br><br>
-            <button id="forgot">Forgot Password</button>
-            <button id="registration">Registration</button>
+            <button id="loginBtn">Login</button><br><br>
+            <a class="link" href="/forgot" id="forgot">Forgot password</a><br><br>
+            <a class="link" href="/register" id="register">Register here</a>
         </fieldset>
     </body>
 </html>
