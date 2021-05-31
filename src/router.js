@@ -15,6 +15,9 @@ const apiRoutes = (app)=>{
     app.use('/api/cart', require('./api/cart'));
     app.use('/api/wishlist', require('./api/wishlist'));
     app.use('/api/payment', require('./api/payment'));
+
+    //getting hbs routes
+    app.use('/task', require('./hbs-routes/admin'));
 }
 
 module.exports = {

@@ -85,10 +85,23 @@ button{
     background-color: magenta;
 }
 
-h3{
+.form{
+    margin-left: 10px;
+    margin-top: 100px;
+    padding: 10px;
     text-align: center;
-    margin-top: 200px;
-    margin-left: 200px;
-    font-size: xx-large;
-    margin-left: 200px;
+}
+
+label{
+    font-size: large;
+    color:rgb(4, 4, 56);
+    font-weight: 500;
+}
+
+.submitbtn{
+    color: blue;
+    background-color: rgb(241, 182, 182);
+    padding: 10px;
+    font-size: large;
+    font-weight: bolder;
 }

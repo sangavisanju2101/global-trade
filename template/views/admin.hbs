@@ -1,41 +1,44 @@
 <html>
 
 <head>
-    <title>Admin Page</title>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/admin.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&family=Zen+Dots&display=swap" rel="stylesheet">
+    <title>ADMIN PAGE</title>
+    <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/admin.js"></script>
+    <script src="https://kit.fontawesome.com/2b98a38ab2.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/admin.js"></script>
 </head>
 
 <body>
-    <div><h1>Welcome to Admin Page</h1></div>
-
-    <div class="header">
-        <h2><span><i class="fa fa-globe" aria-hidden="true"></i></span> Global connect <span><button class="logout">Logout</button></span></h2>
-    </div>
-    <div id="sidebar">
-        <ul>
-            <li><span class="fa fa-home" aria-hidden="true"></i></span><button id="sideHome">HOME</button></li>
-            <li><span><i class="fa fa-lock" aria-hidden="true"></i></span><button id="sideAdmin">ADMIN</button></li>
-            <li><span><i class="fa fa-user" aria-hidden="true"></i></span><button>VENDOR</button></li>
-            <li><span><i class="fa fa-product-hunt" aria-hidden="true"></i></span><button>PRODUCT</button></li>
-            <li><span><i class="fa fa-adn" aria-hidden="true"></i></span><button>AD</button></li>
-        </ul>
-    </div>
+    {{>header}}
+    
     <div>
-        <span>
-        <input type="button" value="Delete" class="deletBtn">
-        <input type="button" value="Add Admin" class="adminBtn">
-        <input type="button" value="Edit" class="editBtn">
-        </span>
+        <button class="deletebtn" id="deletebtn">Delete</button>
+        <button class="addbtn" id="addadminbtn">Add admin</button>
+        <button class="editbtn" id="editbtn">Edit</button>
     </div>
-    <div class="details">
-        <p></p>
 
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th class="th1">NAME</th>
+                    <th class="th2">EMAIL</th>
+                    <th class="th3">SELECT</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each adminArr}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td><input type="checkbox" id="{{this.id}}"></td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
     </div>
 </body>
 

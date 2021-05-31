@@ -34,3 +34,9 @@ button{
     background-color: pink;
     font-style: italic;
 }
+
+.linkreg{
+    margin-left: 100px;
+    font-weight: bold;
+    color: black; 
+}

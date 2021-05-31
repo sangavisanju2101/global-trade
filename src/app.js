@@ -1,13 +1,12 @@
 require("./db/mongoose")
 const express = require("express");
+const app = express();
 const path = require("path");
 const hbs = require("hbs");
-const app = express();
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
-
-const routes = require('./router');
 
 const User = require('./models/user'); 
 const Vendor = require('./models/vendor');
@@ -26,6 +25,7 @@ const Cart = require('./models/cart');
 const Wishlist = require('./models/wishlist'); 
 const Payment = require('./models/payment'); 
 
+const routes = require('./router');
 routes.apiRoutes(app); 
 
 // Define Path for express config
@@ -41,8 +41,6 @@ app.set('views', viewPath);
 
 hbs.registerPartials(partialPath);
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 app.get('',(req,res) => {
     res.render('login');
@@ -56,8 +54,16 @@ app.get('/forgot',(req,res)=>{
     res.render("forgot")
 })
 
+app.get('/home',(req,res)=>{
+    res.render("home")
+})
+
 app.get('/admin',(req,res)=>{
     res.render("admin")
+})
+
+app.get('/admin/add',(req,res)=>{
+    res.render("addAdmin")
 })
 
 //app.get('*', (req,res) => {

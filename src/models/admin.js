@@ -6,17 +6,6 @@ const AdminSchema = new mongoose.Schema({
         required : true,
         trim : true
     }, 
-    password : {
-        type : String,
-        trim : true,
-        reqired : true, 
-        minlength : 8,
-        validate : function(value){
-            if(value.includes('password')){
-                throw new Error("Password shouldn't contain the word password")
-            }
-        }
-    },
     email : {
         type : String, 
         reqired : true, 
@@ -26,6 +15,17 @@ const AdminSchema = new mongoose.Schema({
         validate : function(value){
             if(!validator.isEmail(value)){
                 throw new Error('Please enter valid email address');
+            }
+        }
+    },
+    password : {
+        type : String,
+        trim : true,
+        reqired : true, 
+        minlength : 8,
+        validate : function(value){
+            if(value.includes('password')){
+                throw new Error("Password shouldn't contain the word password")
             }
         }
     },
