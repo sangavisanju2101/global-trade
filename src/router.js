@@ -17,7 +17,7 @@ const apiRoutes = (app)=>{
     app.use('/api/payment', require('./api/payment'));
 
     //getting hbs routes
-    app.use('/task', require('./hbs-routes/admin'));
+    app.use('/admin', require('./hbs-routes/admin'));
 }
 
 module.exports = {

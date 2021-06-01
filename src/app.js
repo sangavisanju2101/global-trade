@@ -60,18 +60,6 @@ app.get('/home',(req,res)=>{
     res.render("home")
 })
 
-app.get('/admin',(req,res)=>{
-    adminService.getAdmin(req).then((adminArr)=> {
-        res.render('Admin', {
-            title : 'Admin page',
-            adminArr : adminArr
-        })
-    }).catch((err)=> {
-        console.log("error", err);
-        res.status(500).send('Unable to render page');
-    })
-})
-
 app.get('/admin/add',(req,res)=>{
     res.render("addAdmin")
 })
