@@ -16,12 +16,24 @@ $(document).ready(function(){
         alert("Working");
     })
 
-    $('#adminForm').submit(function(){
+    var url = window.location.href;
+    var id = url.substring(url.lastIndexOf('/') + 1);
+
+    $('#adminForm').submit(function(event){
+        event.preventDefault()
+
+        var adminInput = {
+            name : $('#adminName').val(),
+            email : $('#emailId').val(),
+            password : $('#passWord').val()
+        }
+
         $.ajax({
-            type: 'PUT',
+            type: 'POST',
             url: '/api/admin',
+            data: adminInput,
             success: function(res){
-                alert("Admin added Successfully");
+                alert("admin addedd successfully")
                 window.location.href='/admin'
             },
             error: function(error){

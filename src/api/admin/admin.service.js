@@ -1,10 +1,10 @@
 const Admin = require('../../models/admin');
 
-const getAdmin= (req,res) => {
+const getAdmin= (req) => {
     try{
         return Admin.find(req.query);
     } catch(err){
-        throw new Error(err);
+        throw Error(err);
     }
 }
 

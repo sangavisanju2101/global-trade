@@ -35,7 +35,6 @@ h2{
     color : magenta;
     background-color: black;
     margin-left: 870px;
-    font-style: italic;
 }
 
 .sidebar{
@@ -96,14 +95,14 @@ button{
     font-size: x-large;
     margin-top: 80px;
     color : black;
-    margin-left: 350px;
+    margin-left: 200px;
 }
 
 .editbtn{
     font-size: x-large;
     margin-top: 80px;
     color : black;
-    margin-left: 400px;
+    margin-left: 200px;
 }
 
 table{
@@ -111,17 +110,20 @@ table{
     margin-top: 50px;
     color : black;
     margin-left: 300px;
-    background-color: magenta;
+   
 }
 
 th{
     color:maroon;
     padding-left: 50px;
     padding-right: 50px;
+    border: 2px solid black;
+    background-color: magenta;
 }
 
 td{
     color:black;
     padding-left: 50px;
     padding-right: 50px;
+    border-bottom: 2px solid black;
 }

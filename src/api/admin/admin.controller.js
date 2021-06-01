@@ -33,7 +33,7 @@ const updateAdmin = (req,res) => {
 }
 
 const deleteAdmin = (req,res) => {
-    service.deleteAdmin(req).the((result)=> {
+    service.deleteAdmin(req).then((result)=> {
         res.status(200).send("Record Deleted Successfully...");
     }).catch((err)=>{
         res.status(500).send(err);

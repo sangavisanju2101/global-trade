@@ -41,6 +41,8 @@ app.set('views', viewPath);
 
 hbs.registerPartials(partialPath);
 
+const adminService = require('../src/api/admin/admin.service');
+
 
 app.get('',(req,res) => {
     res.render('login');
@@ -59,7 +61,15 @@ app.get('/home',(req,res)=>{
 })
 
 app.get('/admin',(req,res)=>{
-    res.render("admin")
+    adminService.getAdmin(req).then((adminArr)=> {
+        res.render('Admin', {
+            title : 'Admin page',
+            adminArr : adminArr
+        })
+    }).catch((err)=> {
+        console.log("error", err);
+        res.status(500).send('Unable to render page');
+    })
 })
 
 app.get('/admin/add',(req,res)=>{

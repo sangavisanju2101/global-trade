@@ -5,7 +5,7 @@
 
 body {
     background-color: lightblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: cursive ;
 }
 
 h1{
@@ -30,12 +30,13 @@ h2{
 
 .logout{
     font-size: x-large;
+    
     border-radius: 10px;
     font-weight: bold;
     color : magenta;
     background-color: black;
     margin-left: 870px;
-    font-style: italic;
+
 }
 
 .sidebar{

@@ -43,4 +43,20 @@ $(document).ready(function(){
      $('#addadminbtn').click(function(){
         window.location.href = 'http://localhost:3000/admin/add'
     })
+
+    $("#editbtn").click(function(){
+        var checked = $("input[type=checkbox]:checked").length; 
+        if(!checked || checked >1){
+            alert("Please select only one checkbox to edit");
+            return;
+        }
+
+        var all = $("input:checkbox");
+            var checked = all.filter(":checked");
+
+            var checkedIds = checked.map(function(){
+                return this.id;
+            })
+            window.location.href=`/admin/edit/${checkedIds[0]}`;
+    })
 })
