@@ -30,10 +30,10 @@ const saveAdmin = (req,res) => {
 
 const updateAdmin = async (req,res) => {
     try{
-        var tasks = await service.getAdminById(req);
+        var admin = await service.getAdminById(req);
         res.render('addAdmin',{
-            title : "Edit task",
-            admin : admins
+            title : "Edit admin",
+            admin : admin
         })
     }catch(err){
         console.log(err)

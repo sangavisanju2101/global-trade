@@ -28,12 +28,21 @@ $(document).ready(function(){
             password : $('#passWord').val()
         }
 
+        var apiUrl, method; 
+
+        if(!id) {
+            method = 'POST';
+            apiUrl = '/api/admin'
+        } else {
+            method = 'PUT';
+            apiUrl = `/api/admin/${id}`
+        }
+
         $.ajax({
-            type: 'POST',
-            url: '/api/admin',
+            type: method,
+            url: apiUrl,
             data: adminInput,
             success: function(res){
-                alert("admin addedd successfully")
                 window.location.href='/admin'
             },
             error: function(error){
